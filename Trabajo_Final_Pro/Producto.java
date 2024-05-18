@@ -1,13 +1,20 @@
 package Trabajo_Final_Pro;
+
 public class Producto {
+    private int id;
     private String nombre;
     private double precio;
-    private int cantidadStock;
+    private int cantidad;
 
-    public Producto(String nombre, double precio, int cantidadStock) {
+    public Producto(int id, String nombre, double precio, int cantidad) {
+        this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-        this.cantidadStock = cantidadStock;
+        this.cantidad = cantidad;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombre() {
@@ -18,11 +25,21 @@ public class Producto {
         return precio;
     }
 
-    public int getCantidadStock() {
-        return cantidadStock;
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void actualizarStock(int cantidad) {
-        cantidadStock += cantidad;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                ", cantidad=" + cantidad +
+                '}';
     }
 }
